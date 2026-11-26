@@ -10,7 +10,9 @@
   "scripts": {
     "start": "node src/server.js",
     "dev": "node --watch src/server.js",
-    "doctor": "node scripts/doctor.mjs"
+    "doctor": "node scripts/doctor.mjs",
+    "lint": "eslint .",
+    "format": "prettier --write ."
   },
   "dependencies": {
     "cors": "2.8.5",
@@ -18,5 +20,20 @@
     "express": "4.17.1",
     "lodash": "4.17.15",
     "pg": "8.23.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.15.0",
+    "eslint-config-prettier": "^10.1.8",
+    "globals": "^17.14.0",
+    "lint-staged": "^17.6.2",
+    "prettier": "^3.10.1"
+  },
+  "lint-staged": {
+    "*.{js,mjs}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,md,css,html,yml,yaml}": "prettier --write"
   }
 }

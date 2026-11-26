@@ -13,7 +13,7 @@ app.use(express.static(path.join(__dirname, "..", "public")));
 app.use("/api/rooms", roomsRoutes);
 app.use("/api/bookings", bookingsRoutes);
 
-app.use((err, req, res, next) => {
+app.use((err, req, res, _next) => {
   console.error(err);
   res.status(500).json({ error: err.message, stack: err.stack });
 });
