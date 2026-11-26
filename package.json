@@ -13,6 +13,7 @@
     "doctor": "node scripts/doctor.mjs",
     "lint": "eslint .",
     "format": "prettier --write ."
+    "prepare": "husky"
   },
   "dependencies": {
     "cors": "2.8.5",
@@ -35,5 +36,8 @@
       "prettier --write"
     ],
     "*.{json,md,css,html,yml,yaml}": "prettier --write"
+    "@commitlint/cli": "^21.2.4",
+    "@commitlint/config-conventional": "^21.2.4",
+    "husky": "^9.1.7"
   }
 }

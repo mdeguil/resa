@@ -33,6 +33,14 @@ npm run dev
 - **Réinitialiser la base** : `docker compose down -v` (`init.sql` ne s'exécute que sur un volume vide).
 - **Linux : `permission denied` sur Docker** : `sudo usermod -aG docker $USER`, puis se déconnecter et se reconnecter.
 
+## Contribuer
+
+- **Branches** : `type/numero-description`, où `numero` est le numéro du ticket (ex. `feat/12-annulation-reservation`, `docs/22-section-equipe`).
+- **Commits** : [Conventional Commits](https://www.conventionalcommits.org/fr/) — `type(portée optionnelle): description` (ex. `feat: annuler une réservation`, `fix(api): refuser end_at < start_at`). Types : `feat`, `fix`, `docs`, `chore`, `refactor`, `test`, `ci`…
+- **Pull requests** : une PR par ticket, relue et approuvée par au moins une autre personne avant fusion. La description contient `Closes #n` pour fermer le ticket automatiquement.
+- **Fusion** : en **squash merge** uniquement — un ticket = un commit sur `main`.
+- **Hooks Git** : installés automatiquement par `npm install` (script `prepare` → Husky). Le hook `commit-msg` lance commitlint et refuse tout message qui ne respecte pas Conventional Commits.
+
 ## Équipe
 - Enzo (@LOGIN)
 - Matéo (@mdeguil)
